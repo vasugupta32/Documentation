@@ -7,10 +7,10 @@ Video's Link
 	2)https://youtu.be/vacvCaE4uQM
 	3)https://youtu.be/h17po-0DfWE
 	4)https://youtu.be/ZGnHJzPJdd0
-	5)
-	6)
-	7)
-	8)
+	5)https://youtu.be/vEv0IxPEsW0
+	6)https://youtu.be/OoZxPUgpUUM
+	7)https://youtu.be/p4HuoL7hwXI
+	8)https://youtu.be/3moRvwkqy_A
 	
 Learnings
 	What is Docker?
@@ -149,8 +149,7 @@ Learnings
 		*Attach Volume to Containers.
 		*On deleting containers volumes does not delete.
 	
-run this command inside container to fetch the os info-
-cat /etc/os-release
+
 
 
 7th January, 2022
@@ -159,7 +158,7 @@ Topic: Puppet - Port:8140
 
 Video's Link
 	1)https://youtu.be/F-NGOvYiV9g
-	2)https://youtu.be/kHD4KQKKP5Y (Recommended)
+	2)https://youtu.be/kHD4KQKKP5Y 
 	3)https://youtu.be/Ns_tRKD20c4
 	4)https://youtu.be/rJqvjGjW3zw
 	5)https://youtu.be/OmRxKQHtDbY
@@ -302,123 +301,8 @@ Learnings
 
 
 
-10th January, 2022
 
-Topic: Grafana
 
-Video's Link-
-	1)https://youtu.be/w-c3KYKQQfs
-	2)
-	3)
-Learnings-
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-I have watched 6-7 hours video content on Docker and now I got better understanding on Docker and next about documentation part, that is pending as now,
-I have noted down all the important points and have all the sreen shots that need to be add in documentation, I will ,complete it in weekend.
-Apart from that today I'm learning about Puppet, and have same planning for that and complete both tools documentation in weekend.
-And apart from that the now I have access of the confluence page that you have shared with me, Important usrls page.
-And the laptop setup is also done today by Sooraj.
