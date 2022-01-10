@@ -1,0 +1,424 @@
+6th January, 2022
+
+Topic: Docker
+
+Video's Link
+	1)https://youtu.be/vWjP3fsfgrw
+	2)https://youtu.be/vacvCaE4uQM
+	3)https://youtu.be/h17po-0DfWE
+	4)https://youtu.be/ZGnHJzPJdd0
+	5)
+	6)
+	7)
+	8)
+	
+Learnings
+	What is Docker?
+		1)Docker is an open-source centralised platform designed to create, deploy and run applications.
+		2)Docker uses container on the host O.S to run applications. It allows applications to use the same linux kernel as a system on the host computer, tayher than creating a whole virtual O.S.
+		3)We can install docker on any O.S but Docker engine runs natively on linux distribution.
+		4)Docker written in 'Go' language.
+		5)Docker is a tool that performs O.S level virtualization, also known as containerization.
+		6)Before Docker many users faces the problem that a particular code is running in the developers system but not in the users system.
+		7)Docker is a set of platformas as a service that uses O.S level virtualization whereas VMware uses Hardware level virtualization.
+	
+	Advantages of Docker-
+		1)No pre-allocation of RAM.
+		2)CI Efficiency- Docker enables you to build a container image and use that same image across every step of the deployment process.
+		3)Less cost.
+		4)it is light in weight.
+		5)It can run on physical H/w / Virtual hardware or on cloud.
+		6)You can re-use the image.
+		7)It took very less time to create container.
+	
+	Disadvantage of Docker-
+		1)Docker is not good solution for applications that require rich GUI.
+		2)Difficult to manage large amount of containers.
+		3)Docker does not provide cross-platform compatibility means if an application is designed to run in a docker container on windows, then itt can't run on linux or vice-versa.
+		4)Docker is suitable when the development O.S and testing O.S are same if the O.S is different, we should use VM.
+		5)No solution for Data Recovery & Backup.
+	
+	
+	Component of Docker-
+		Docker Daemon-
+			*Docker daemon runs on the Host O.S.
+			*It is responsible for running containers to manages docker services.
+			*Docker daemon can communicate with other daemon.
+			
+		Docker Client-
+			*Docker users can interact with docker daemon through a client(CLI).
+			*Docker client uses commands and Rest API to communicate with the docker daemon.
+			*When a client runs any server command on the docker client terminal, the client terminal sends these docker commands to the docker daemon.
+			*It is possible for docker client to communicate with more than one daemon.
+			
+		Docker Host-
+			*Docker Host is used to provide an environment to execute and run applications. It contains the docker daemon, images, containers, networks and storages.
+			
+		Docker Hub/Registry-
+			*Docker registry manages and stores the docker images.
+			
+			There are two types of registries in the docker-
+				1)Public Registry- Public registry is also called as docker hub.
+				2)Private Registry- It is used to share images within the enterprise.
+				
+		Docker images-
+			*Docker images are the read only binary templates used to create docker containers.
+				OR
+			*Single file with all dependencies and configuration required to run a program.
+			
+		Ways to create an Images-
+			1)Take image from docker hub.
+			2)Create image from docker file.
+			3)Create image from existing docker containers.
+			
+		Docker Container-
+			*Container hold the entire packages that is needed to run the application.
+				OR
+			 The image is template and the container is a copy of that template.
+			*Container is like a virtual machine.
+			*Images becomes container when they run on docker engine.
+			
+	Basic Commands in Docker-
+		*To see all images present in your local machine
+			docker images
+		*To find out images in docker hub
+			docker search <image name>
+		*To download image from docker hub to local machine
+			docker pull <image name>
+		*To give name to container
+			docker run -it --name <give any name> ubuntu /bin/bash
+		*To check service is start or not
+			service docker status
+		*To start container
+			docker start <image name>
+		*To go inside container
+			docker attach <container name>
+		*To see all containers running as well as exited 
+			docker ps -a
+		*To see all running container
+			docker ps
+		*To stop container
+			docker stop <container name>
+		*To delete container
+			docker rm <container name>
+	
+	Dockerfile components
+		Dockerfile-
+			*Dockerfile is basically a text file. It contains some set of instruction.
+			*Automation of docker image creation.
+		
+		Docker Components-
+			FROM -> for base image. This command must be on top of the dockerfile.
+			RUN -> To execute commands, it will create a layer in image.
+			MAINTAINER -> Author/ Owner/ Description
+			COPY -> Copy files from local system(docker VM). We need to provide source, destination (We can't download file from internet and any remote repo)
+			ADD -> Similar to COPY but, it provodes a feature to download files from internet, also we extract file at docker image side.
+			EXPOSE -> To expose ports such as port 8080 for tomcat, port 80 for nginx etc.
+			WORKDIR -> To set working directory for container.
+			CMD -> Execute commands but during container creation.
+			ENTRYPOINT -> Similar to CMD, but has higher priority over CMD, first commands will be executed `by ENTRYPOINT only.
+			ENV -> Environment variables.
+	
+		Dockerfile
+			1)Create a file named Dockerfile.
+			2)Add instruction in Dockerfile.
+			3)Build dockerfile to create image.
+			4)Run image to create container.
+			
+		To Create image out of dockerfile-
+			docker build -t <any name for image> .
+		To create image from running docker container
+			docker commit <name for the image>
+			
+	Docker Volume and how to share it-
+		*Volume is simply a directory inside our Container.
+		*Firstly, we have to declare this directory as a volume and then share volume.
+		*Even if we stop container, still we can access the volume.
+		*Volume will be created in one container.
+		*You can declare a directory as a volume only while creating container.
+		*You can't create volume from existing container.
+		*You can share one volume across any number of container.
+		*Volume will not be included when you update any image.
+			You can mapped volume in two ways-
+				1) Container <-> Container
+				2) Host <-> Container
+	
+	Benefits of Volume-
+		*Decoupling Container from storage.
+		*Share volume among different containers
+		*Attach Volume to Containers.
+		*On deleting containers volumes does not delete.
+	
+run this command inside container to fetch the os info-
+cat /etc/os-release
+
+
+7th January, 2022
+
+Topic: Puppet - Port:8140
+
+Video's Link
+	1)https://youtu.be/F-NGOvYiV9g
+	2)https://youtu.be/kHD4KQKKP5Y (Recommended)
+	3)https://youtu.be/Ns_tRKD20c4
+	4)https://youtu.be/rJqvjGjW3zw
+	5)https://youtu.be/OmRxKQHtDbY
+	
+Learnings
+
+	What is Puppet?
+		Puppet is an open-source software configuration management tool. It runs on many Unix-like systems as well as on Microsoft Windows,
+		and includes its own declarative language to describe system configuration.
+		
+	Key Features of Puppet
+		*Large User Base
+		*Big Open Source Community
+		*Documentation
+		*Platform Support
+	
+	Puppet Architecture
+		Puppet follows a Master Slave Architecture, the working has been explained in the below diagram
+											2.
+											Master does analysis on the data ,
+											and If any change is needed, sends
+											the required changes to the slave
+											
+			--------------Puppet Master-------------->
+			|						|				 |
+			|						|				 |
+			|	1. 					|				 |
+			|	Slave sends machine |<---------------Puppet 
+			|	metadata or state to 				Slave
+			|	master								|
+			|										|
+			<----------------------------------------
+		3.
+		Slave does the changes, and 
+		sends a report back to master,
+		of the chages
+
+
+	Puppet Architecture - SSL connection
+		Bacause Puppet nodes have to interact with the master, all the information which is communicated between the master node and
+		the slave nodes are encrypted using SSL certificates, The certificate signing process is as follows-
+						
+						<-----------------------------------
+							master for master certificate
+							
+						------------------------------------>
+							master certificates is sent
+							
+		Puppet Master	------------------------------------>    Puppet Slave
+							Request for slave certificate
+							
+						<------------------------------------
+							Slave certificate is sent
+		
+						
+						 On Master server, we have to sign the Slave
+					Certificate in order to authenticate slave to access
+									the Puppet Master
+
+	
+	Code Basics for Puppet
+		The most basic component of Puppet code is a resource. A resource describes something about the state of the system, such as a certain
+		user or file should exist, or a package should be installed, etc.
+			Syntax:
+				resource_type {'resource_name':
+					attribute => value,
+						...
+					}
+			Exmaple :Sample nginx package
+				package{'nginx':
+					ensure => 'installed',
+				}
+
+	Code Basics for Puppet - Manifest
+		Resource }
+		Resource }--->--------- Manifest
+		Resource }
+
+		Manifests are basically a collection od resource declaration, using the extension .pp
+		Example: Sample Manifest file
+			node default {
+			package{'nginx':
+			ensure =>'installed',
+			}
+			
+			file{'/tmp/hello.txt':
+			ensure =>present,
+			content =>'hello world',
+			mode =>'0644',
+			}
+			}
+		
+		location of Manifest file:
+			/etc/puppet/code/environments/production/manifests/site.pp
+
+		To validate the manifest (.pp) file-
+			puppet parser validate site.pp
+		Command that is used to check updates in agent-
+			sudo puppet agent --test
+			
+	
+	Code Basics for Puppet - Manifest - Variables
+		Variables can be defined at nay point in a manifest. The most common types of variables are strings ard arrays of strings,
+		but other types are also supported, such as booleans and hashes.
+		Example:
+			$text="hello world"
+			
+			file{'/tmp/hello.txt':
+			ensure =>present,
+			content =>'hello world',
+			mode =>'0644',
+			}
+
+	Code Basics for Puppet - Manifest - Loops
+		Loops are typically used to repeat a tsk rusing different input values. For instance, instead of creating 10 tasks for installing
+		10 different packages, you can create a single task and use a loop to repeat the task with all the different
+		packages you want to install.
+		Example:
+			$packages=['nginx','mysql-server']
+			
+			package{$packages:
+			ensure =>installed,
+			}
+
+	Code Basics for Puppet - Manifest - Conditions
+		Conditions can be used to dynamically decide whether or not a block of code should be executed, based on a variable or an output
+		from a command, for instance.
+		Example-1:
+			exec{"Test":
+			command =>'/bin/echo apache2 is installed> /tmp/status.txt',
+			onlyif =>'/bin/which apache2',
+			}
+		
+		Example-2:
+			exec{"Test":
+			command =>'/bin/echo apache2 is not installed> /tmp/status.txt',
+			unless =>'/bin/which apache2',
+			}
+
+
+
+
+10th January, 2022
+
+Topic: Grafana
+
+Video's Link-
+	1)https://youtu.be/w-c3KYKQQfs
+	2)
+	3)
+Learnings-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I have watched 6-7 hours video content on Docker and now I got better understanding on Docker and next about documentation part, that is pending as now,
+I have noted down all the important points and have all the sreen shots that need to be add in documentation, I will ,complete it in weekend.
+Apart from that today I'm learning about Puppet, and have same planning for that and complete both tools documentation in weekend.
+And apart from that the now I have access of the confluence page that you have shared with me, Important usrls page.
+And the laptop setup is also done today by Sooraj.
