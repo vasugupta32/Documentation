@@ -1,0 +1,137 @@
+17th and 18th January, 2022
+
+Topic: Nomad
+
+Video's Link-
+	1)https://youtu.be/s_Fm9UtL4YU
+	2)https://youtu.be/xl58mjMJjrg
+	3)https://youtu.be/X9JR3Dr6O-Y
+	4)https://youtu.be/BaRqLIaTfZU
+	5)https://youtu.be/UkXeRbzrWqo
+	6)https://youtu.be/6GShFLUcdUA
+	
+	
+
+Learnings-
+	What is Nomad?
+		Nomad is a flexible scheduler and workload orchestrator that enables an organization to easily deploy and manage any containerized or legacy application 
+		using a single, unified workflow. Nomad can run a diverse workload of Docker, non-containerized, microservice, and batch applications.
+	
+	where can Nomad Run?
+		Multi Cloud
+		* Single or Multi Cloud, Hybrid, or On-prem
+		Multi-OS
+		*Windows, Linux, ARM, etc.
+	What can Nomad Run?
+		Docker
+		Java
+		Qemu
+		Windows
+		Raw & Isolated Executables
+		Even more with extensible task drivers
+	Building a Nomad Cluster
+		3 or 5 servers
+		A Nomad Agent on any infrastructure you want to use
+		It's a single binary
+		
+	Nomad Job Spec
+		Job > Group > Task
+		*Each Group of tasks will run on the same host.
+		*Each Task is a unique action for Nomad to make.
+		
+	
+	Jobs
+		Jobs are the primary configuration that users interact with when using Nomad. A job, or job file, is a declarative specification of what tasks 
+		or workloads Nomad should run.
+		When a job is submitted or updated, Nomad will create an evaluation to determine what actions need to take place. If Nomad determines a workload 
+		needs to be started, as is the case when a new job is submitted, a new allocation will be created and scheduled on a client.
+
+	Allocations
+		An allocation is a mapping between a task group in a job and a client node. A single job may have hundreds or thousands of task groups, meaning an 
+		equivalent number of allocations must exist to map the work to client machines. Allocations are created by the Nomad servers as part of scheduling
+		decisions made during an evaluation.
+		
+		
+	Key Definitions
+		The Nomad job specification defines the schema for Nomad jobs. Job files are written in the HashiCorp Configuration Language (HCL), which strikes 
+		a nice balance between human readable and editable code, and is machine-friendly.
+		
+			*Job: 
+			A specification provided by users that declares a workload for Nomad.
+			*Task Group
+			A set of tasks that must be run together on the same client node. Multiple instances of a task group can run on different nodes.
+			*Task
+			The smallest unit of work in Nomad.
+			*Task Driver
+			Represents the basic means of executing your Tasks e.g. Docker, Java, Qemu etc.
+			*Resources
+			Describes the requirements a task needs to execute such as memory, network, CPU and more.
+
+				
+
+
+
+
+19th and 20th January, 2022
+
+Topic: Consul
+
+Video's Link-
+	1)https://youtu.be/0z9grXyOPwU
+	2)https://youtu.be/Ve2hI7_Hm2g
+	3)https://youtu.be/YqDZdPg3_tU
+	4)https://youtu.be/_TwT3NafTT0
+	5)https://youtu.be/K3CUVNEYWf8
+
+Learnings-
+	What is Consul?
+		Problem:
+			Microservices and other distributed systems can enable faster, simpler software development. But there’s a trade-off resulting in greater 
+			operational complexity around inter-service communication, configuration management, and network segmentation.
+			
+		Solution:
+			HashiCorp Consul is an open-source tool that solves these new complexities by providing service discovery, health checks, load balancing, a 
+			service graph, mutual TLS identity enforcement, and a configuration key-value store. These features make Consul an ideal control plane for a 
+			service mesh.
+			1)Service Discovery
+			2)Service Configuration
+			3)Service Segmentation
+	
+	Consul’s Solutions
+	1)Service discovery problem in distributed systems is a central service registry.
+	Consul maintains a central registry that contains the entry for all the upstream services. When a service instance starts, it is registered on the 
+	central registry. The registry is populated with all the upstream instances of the service.
+	When a service A wants to talk to service B, it will discover and communicate with B by querying the registry about the upstream service 
+	instances of B. So, instead of talking to a load balancer, the service can directly talk to the desired destination service instance.
+	Consul also provides health-checks on these service instances. If one of the service instances or services itself is unhealthy or fails its 
+	health-check, the registry would then know about this scenario and would avoid returning the service’s address. The work that the load-balancer
+	would do is handled by the registry in this case.
+	Also, if there are multiple instances of the same service, Consul would send the traffic randomly to different instances. Thus, leveling the 
+	load among different instances.
+	Consul has handled our challenges of failure detection and load distribution across multiple instances of services without the necessity of 
+	deploying a centralized load balancer.The traditional problem of slow and manually managed load balancers is taken care of here. Consul 
+	programmatically manages registry, which gets updated when any new service registers itself and becomes available for receiving traffic.
+	This helps with scaling the services with ease.
+
+
+	2)configuration management in a distributed environment is the central Key-Value store.
+	Consul solves this challenge in a unique way. Instead of spreading the configuration across different distributed services as configuration pieces, 
+	it pushes the whole configuration to all the services and configures them dynamically on the distributed system.
+	Let’s take an example of state change in configuration. The changed state is pushed across all the services in real-time. The configuration is 
+	consistently present with all the services.
+
+	3)Consul’s solution to the overall network segmentation challenge in distributed systems is by implementing service graphs and mutual TLS.
+	Consul solves the problem of network segmentation by centrally managing the definition around who can talk to whom. Consul has a dedicated feature for 
+	this called Consul Connect.
+	Consul Connect enrolls these policies of inter-service communication that we desire and implements it as part of the service graph. So, a policy might 
+	say service A can talk to service B, but B cannot talk to C, for example.
+	The higher benefit of this is, it is not IP restricted. Rather it’s service level. This makes it scalable. The policy will be enforced on all instances 
+	of service and there will be no hardbound firewall rule specific to a service’s IP. Making us independent of the scale of our distribution network.
+	Consul Connect also handles service identity using popular TLS protocol. It distributes the TLS certificate associated with a service.
+	These certificates help other services securely identify each other. TLS also help with secure communication between the services. This makes for trusted 
+	network implementation.
+	Consul enforces TLS using an agent-based proxy attached to each service instance. This proxy acts as a sidecar. The use of proxy, in this case, prevents 
+	us from making any change into the code of original service.
+	This allows for the higher-level benefit of enforcing encryptions on data at rest and data in transit. Moreover, it will assist with fulfilling 
+	compliances required by laws around privacy and user identity.
+
