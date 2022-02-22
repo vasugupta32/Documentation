@@ -1,0 +1,90 @@
+Foreman
+	Foreman (also known as The Foreman) is an open source complete life cycle systems 
+	management tool for provisioning, configuring and monitoring of physical and virtual 
+	servers.
+	more about - https://en.wikipedia.org/wiki/Foreman_(software)#History
+				 https://www.theforeman.org/
+	
+	sudo vi /etc/hosts
+
+	sudo vi /etc/hostname    
+
+
+	The full log is at /var/log/foreman-installer/foreman-installer.log
+
+	Edit puppet.conf:
+
+	sudo vi /etc/puppet/puppet.conf
+
+=========================================================================================
+
+IPA Server-
+
+Links-
+	https://www.youtube.com/watch?v=_zlcxjkbayk
+	https://www.freeipa.org/page/About
+
+Learnings-
+	Redhat disigned a package which is combination of Identity Policy and Accounting.
+	Previously in the data center while configuring tha data center and configuring infra server and 
+	configuring the client we had to do lot of modification
+	
+	IPA is combination of all these packages you can explude DHCP package out of it so IPA includes inbuilt DNS server, 
+	NTP server. Kerberos, It has 389 directory server and a certificate server inside it. So it's all in one package 
+	and which works as an active directory server for linux. It is same you are managing the password policies, you are 
+	managing sudoers you are managing everthing centrally from one location which will be your IPA server.
+	So it manages the identity of machines, Identity of services, identity of servers and manages the polices related 
+	to your services and makes logs of accounting.
+ 
+	So we can say it 
+	1)IPA is servers and Domain controller for Linux
+	2)create identity stores maeans it stores the idenntity of users
+	3)centralized authentication
+	4)domain control for kerberos and DNS services
+	5)authentication policies
+	6)NTP and Certificate Servers
+ 
+	Componenets of IPA 
+	1)Dogstag Certificate System
+	2)389 Directory Server
+	3)Kerberos KDC with LDAP BAckened
+	4)Apache for Web BAsed Services
+	5)ipa_kpassword
+	6)DNS
+	7)NTP
+ 
+ 
+
+==========================================================================================
+Solr
+
+	goto /bin directory and copy path
+	In cmd- cd path of solr bin direectory
+	->solr start
+		solr start -p <port number> (if want to run solr on another port port otherwise
+		default port is 8933)
+	->solr stop -all
+	->solr restart -p <port>
+	-> solr status
+	->solr -help
+	Solr core
+		A solr core is a running instance of a Lucene index that contains all the Solr 
+		configuration files required to use it. We need to create a SolrCore to perform
+		operations like indexing and analyzing.
+		
+	Creating a core
+	./solr create -c solr_samplr
+	
+	Addinfg a single or multiple JSON Document and Retrieving a Document
+		https://youtu.be/W7RZDGAqs2I
+		
+
+Pulp
+	Pulp is a platform for managing repositories of software packages and making them 
+	available to a large number of consumers. Pulp can locally mirror all or part of a
+	repository, host your own software packages in repositories, and manage many types 
+	of content from multiple sources in one place.
+	more about - https://pulpproject.org/about-pulp-3/
+	 
+
+

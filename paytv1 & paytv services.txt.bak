@@ -1,0 +1,144 @@
+#paytv1 and paytv services list after using filter "docker::run_instance"
+paytv1
+
+msapi
+  envoy-proxy:
+  msapi
+  xds-server:
+
+msepg
+  mobi-platform-guide-service:
+
+noslr
+  mobi-thirdparty-solr-docker:
+
+svmgm
+  mobi-tools-idm:
+  mobi-tools-must:
+
+juplm
+  mobi-platform-policy-service:
+
+jupub
+  mobi-platform-rollup-solr-service:
+
+msacc
+  mobi-platform-account-service:
+  mobi-platform-rights-service:
+
+msapi
+  envoy-proxy:
+  msapi:
+  xds-server:
+
+msath
+  mobi-platform-auth-service:
+
+msbls
+  mobi-platform-blackout-service:
+
+mscfg
+  mobi-platform-config-manager-git-sync-service:
+  mobi-platform-vid-service:
+
+msdai
+  mobi-platform-ccms-service:
+
+msepg
+  mobi-platform-guide-service:
+
+msfrn
+  mobi-platform-dma-service:
+  mobi-platform-google-assistant-proxy:
+  mobi-varnish6-service:
+
+msliv
+  mobi-platform-stream-counter-service:
+
+msofm
+  mobi-platform-offer-client-service:
+
+msrec
+  mobi-platform-recents-cleaner:
+  mobi-platform-recents-service:
+  mobi-platform-user-preferences-service:
+
+mssub
+  mobi-platform-client-purchase-service:
+  mobi-platform-purchase-adapter-service:
+
+nogit
+  git2consul:
+  mobi-gitea:
+
+nozoo
+  mobi-platform-consul-consul-sync:
+  mobi-platform-consul-zk-sync:
+  mobi-platform-consul-zk-sync_shared:
+
+sqmon
+  pmm-server:
+
+svcar
+  mobi-ssc-generic-billing-adapter:
+
+
+==============================================================
+
+paytv
+
+ecats
+  trafficserver_exporter:
+
+jutmp
+  mobi-platform-tivo-ingestor-service:
+  mobi-platform-tivo-vod-mapping-service:
+  mobi-platform-push-vidora-service:
+
+svmgm
+  mobi-tools-must:
+  mobi-tools-idm:
+
+juarn
+  mobi-platform-media-transcoding-service:
+
+judai
+  mobi-platform-ccms-ingestor-service:
+
+juing
+  mobi-platform-program-scheduler:
+  mobi-platform-vod-ingestor-service:
+  mobi-platform-gracenote-service-interface:
+  mobi-platform-tivo-vod-mapping-service:
+  mobi-platform-tivo-ingestor-service:
+  mobi-platform-ingestion-event-service:
+  mobi-platform-catchup-restriction-service:
+
+jupkg
+ mobi-platform-media-packaging-service:
+
+msbko
+  mobi-platform-esni-service:
+  mobi-platform-fox-adapter:
+  mobi-platform-turner-adapter:
+  mobi-platform-generic-adapter:
+  mobi-platform-pois-scheduler-service:
+  mobi-platform-pois-matcher-service:
+
+mssch
+  mobi-platform-config-manager-git-sync-service:
+
+nogit
+  mobi-gitea:
+  git2consul:
+
+nozoo
+  mobi-platform-consul-zk-sync:
+  mobi-platform-consul-zk-sync_bg:
+  mobi-platform-consul-consul-sync:
+
+stmma
+  mobi-varnish-config:
+
+stsen
+  mobi-varnish6-config:

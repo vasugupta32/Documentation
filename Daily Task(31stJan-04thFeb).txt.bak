@@ -1,0 +1,52 @@
+Foreman
+	Foreman (also known as The Foreman) is an open source complete life cycle systems 
+	management tool for provisioning, configuring and monitoring of physical and virtual 
+	servers.
+	more about - https://en.wikipedia.org/wiki/Foreman_(software)#History
+				 https://www.theforeman.org/
+	
+	sudo vi /etc/hosts
+
+	sudo vi /etc/hostname    
+
+
+	The full log is at /var/log/foreman-installer/foreman-installer.log
+
+	Edit puppet.conf:
+
+	sudo vi /etc/puppet/puppet.conf
+
+
+==========================================================================================
+Solr
+
+	goto /bin directory and copy path
+	In cmd- cd path of solr bin direectory
+	->solr start
+		solr start -p <port number> (if want to run solr on another port port otherwise
+		default port is 8933)
+	->solr stop -all
+	->solr restart -p <port>
+	-> solr status
+	->solr -help
+	Solr core
+		A solr core is a running instance of a Lucene index that contains all the Solr 
+		configuration files required to use it. We need to create a SolrCore to perform
+		operations like indexing and analyzing.
+		
+	Creating a core
+	./solr create -c solr_samplr
+	
+	Addinfg a single or multiple JSON Document and Retrieving a Document
+		https://youtu.be/W7RZDGAqs2I
+		
+
+Pulp
+	Pulp is a platform for managing repositories of software packages and making them 
+	available to a large number of consumers. Pulp can locally mirror all or part of a
+	repository, host your own software packages in repositories, and manage many types 
+	of content from multiple sources in one place.
+	more about - https://pulpproject.org/about-pulp-3/
+	 
+
+
